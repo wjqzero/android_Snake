@@ -31,7 +31,9 @@ public class ViewNew extends Button implements IModelListener
 			@Override
 			public void onClick(View v)
 			{
-				c.newSnake(v.getWidth(), v.getHeight());
+				MainActivity ma = (MainActivity)v.getContext();
+				ViewSnakes vs = (ViewSnakes) ma.findViewById(R.id.drawing_area);
+				c.newSnake(vs.getWidth(), vs.getHeight());
 			}
 		});
 	}

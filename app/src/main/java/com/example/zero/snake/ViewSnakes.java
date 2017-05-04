@@ -29,7 +29,13 @@ public class ViewSnakes extends View implements IModelListener
 
 	public void notifyModelListener()
 	{
-		invalidate();
+		this.post(new Runnable() {
+			@Override
+			public void run() {
+				ViewSnakes viewSnakes = (ViewSnakes)findViewById(R.id.drawing_area);
+				viewSnakes.invalidate();
+			}
+		});
 	}
 
 	protected void onDraw(final Canvas c)

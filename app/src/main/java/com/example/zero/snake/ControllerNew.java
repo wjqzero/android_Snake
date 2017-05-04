@@ -20,6 +20,7 @@ public class ControllerNew
 		this.threads = new ArrayList<Thread>();
 		SnakeRunnable sr = new SnakeRunnable(m, threads.size(), w, h);
 		Thread t = new Thread(sr);
+		threads.add(t);
 		t.start();
 	}
 }
